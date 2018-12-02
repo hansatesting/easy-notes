@@ -29,6 +29,9 @@ public class Dvd {
     @NotBlank
     private String author;
 
+    @NotBlank
+    private String image;
+
 
     @Column(nullable = false, updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
@@ -62,6 +65,14 @@ public class Dvd {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getAuthor() {

@@ -9,31 +9,27 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.util.Date;
 
-/**
- * Created by hansa
- */
 @Entity
-@Table(name = "books")
+@Table(name = "barrow")
 @EntityListeners(AuditingEntityListener.class)
 @JsonIgnoreProperties(value = {"createdAt", "updatedAt"},
         allowGetters = true)
-public class Book {
+public class Barrow {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long barrowid;
 
     @NotBlank
-    private String title;
+    private String memberid;
 
     @NotBlank
-    private String content;
+    private String nameofbook;
 
     @NotBlank
-    private String image;
+    private String authorofbook;
 
     @NotBlank
-    private String author;
-
+    private String numberofdates;
 
     @Column(nullable = false, updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
@@ -45,44 +41,44 @@ public class Book {
     @LastModifiedDate
     private Date updatedAt;
 
-    public Long getId() {
-        return id;
+    public Long getBarrowid() {
+        return barrowid;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setBarrowid(Long barrowid) {
+        this.barrowid = barrowid;
     }
 
-    public String getTitle() {
-        return title;
+    public String getMemberid() {
+        return memberid;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setMemberid(String memberid) {
+        this.memberid = memberid;
     }
 
-    public String getContent() {
-        return content;
+    public String getNameofbook() {
+        return nameofbook;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setNameofbook(String nameofbook) {
+        this.nameofbook = nameofbook;
     }
 
-    public String getImage() {
-        return image;
+    public String getAuthorofbook() {
+        return authorofbook;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setAuthorofbook(String authorofbook) {
+        this.authorofbook = authorofbook;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getNumberofdates() {
+        return numberofdates;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setNumberofdates(String numberofdates) {
+        this.numberofdates = numberofdates;
     }
 
     public Date getCreatedAt() {
@@ -100,5 +96,4 @@ public class Book {
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
-
 }

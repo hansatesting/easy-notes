@@ -14,6 +14,7 @@ import java.util.List;
  * Created by hansa
  */
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api")
 public class BookController {
 
@@ -47,6 +48,7 @@ public class BookController {
         book.setTitle(bookDetails.getTitle());
         book.setContent(bookDetails.getContent());
         book.setAuthor(bookDetails.getAuthor());
+        book.setImage(bookDetails.getImage());
 
         Book updatedBook = bookRepository.save(book);
         return updatedBook;

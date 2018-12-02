@@ -13,13 +13,13 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api")
 public class DvdController {
 
     @Autowired
     DvdRepository dvdRepository;
-    
+
     @GetMapping("/dvds")
     public List<Dvd> getAllNotes() {
         return dvdRepository.findAll();
@@ -46,6 +46,7 @@ public class DvdController {
         dvd.setTitle(bookDetails.getTitle());
         dvd.setContent(bookDetails.getContent());
         dvd.setAuthor(bookDetails.getAuthor());
+        dvd.setImage(bookDetails.getAuthor());
 
         Dvd updatedDvd = dvdRepository.save(dvd);
         return updatedDvd;
